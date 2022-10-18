@@ -6,7 +6,9 @@ let casella = document.createElement("div")
 //container.append(casella)
 
 counter = false
-let punteggio = 0
+
+let score = []
+console.log(score);
 
 const nabbo = document.querySelector(".nabbo")
 const intermedio = document.querySelector(".intermedio")
@@ -17,27 +19,34 @@ const punteggioElement = document.querySelector("h2")
 //function gridGenerator(min, max, casellaDiffult,classColor, containerDifficult)
 
 nabbo.addEventListener("click", function () {
-    containerNoob.classList.toggle("hide")
+    containerNoob.classList.remove("hide")
     containerInt.classList.add("hide")
     containerPro.classList.add("hide")
     gridGenerator(1, 100, "casella", containerNoob)
     //gridGeneratorNoob(1, 100, "casella")
-    punteggioElement.classList.add("hide")  
+    punteggioElement.classList.add("hide")
+    counter = false  
+    score.length = 0
 })
 
 intermedio.addEventListener("click", function () {
-    containerInt.classList.toggle("hide")
+    containerInt.classList.remove("hide")
     containerNoob.classList.add("hide")
     containerPro.classList.add("hide")
     gridGenerator(1, 81, "casellaInt", containerInt)
-    punteggioElement.classList.add("hide") 
+    punteggioElement.classList.add("hide")
+    counter = false 
+    score.length = 0
 })
 
 pro.addEventListener("click", function () {
-    containerPro.classList.toggle("hide")
+    containerPro.classList.remove("hide")
     containerNoob.classList.add("hide")
-    gridGenerator(1, 81, "casellaPro", containerPro)
     containerInt.classList.add("hide")
+    gridGenerator(1, 49, "casellaPro", containerPro)
+    punteggioElement.classList.add("hide")
+    counter = false 
+    score.length = 0
 })
 
 function generateRandomNumber(min, max) {
@@ -68,46 +77,7 @@ function generateBombs(min, max) {
 generateBombs(1, 100)
 console.log(bombs);
 
-// buleano tornare fals o true 
-// counter conta doppio
 
-/*
-
-function gridGeneratorNoob(min, max, ciao) {
-    for (let index = min; index <= max; index++) {
-        //console.log(index);
-        let casella = document.createElement("div")
-        casella.append(index)
-        containerNoob.append(casella)
-        casella.classList.add(ciao)
-        // al click di una casella, aggiungo e tolgo una classe per cambiargli il colore
-        // e stampo in console il contenuto di idex (il numero della casella)
-        casella.addEventListener("click", function () {
-            if (bombs.includes(index)) {
-                console.log("SI PUO' FARE!!!");
-                counter = true
-            } else {
-                punteggio++
-                console.log(punteggio, "punteggio giocatore");
-                casella.classList.toggle("red")
-                //console.log(index);
-            }
-            if (counter) {
-                punteggioElement.innerHTML = "il tuo punteggio è: " + punteggio
-                punteggioElement.classList.remove("hide")
-                containerNoob.innerHTML = ''
-                //alert("Ups, hai preso una bomba! il tuo punteggio è: " + punteggio)
-            }
-        })
-    }
-}
-
-*/
-
-let score = []
-console.log(score);
-
-console.log(punteggio);
 /**
  * 
  * @param {number} min 
@@ -144,6 +114,8 @@ function gridGenerator(min, max, casellaDiffult, containerDifficult) {
     }
 }
 //console.log(score);
+
+/*
 for (let index = 1; index <= 49; index++) {
     //console.log(index);
     let casella = document.createElement("div")
@@ -169,3 +141,4 @@ for (let index = 1; index <= 49; index++) {
     })
 }
 
+*/
