@@ -1,0 +1,80 @@
+*{
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+body{
+    background-color: palegreen;
+}
+
+h1{
+    text-align: center;
+}
+
+.center{
+    text-align: center;
+    margin-top: 2rem;
+}
+
+button{
+    padding: 1rem;
+    font-size: 1.5rem;
+    font-weight: bold;
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+
+.containerNoob,
+.containerInt,
+.containerPro{
+    display: flex;
+    flex-wrap: wrap;
+    max-width: 1200px;
+    margin: auto;
+    margin-top: 10rem;
+}
+
+.casella{
+    border: 1px solid black;
+    text-align: center;
+    line-height: 111px;
+    width: calc(100% / 10);
+    aspect-ratio: 1 / 1;
+    background-color: aquamarine;
+}
+
+.casellaInt{
+    border: 1px solid black;
+    text-align: center;
+    line-height: 124px;
+    width: calc(100% / 9);
+    aspect-ratio: 1 / 1;
+    background-color: royalblue;
+}
+
+.casellaPro{
+    border: 1px solid black;
+    text-align: center;
+    line-height: 159px;
+    width: calc(100% / 7);
+    aspect-ratio: 1 / 1;
+    background-color: lightcoral;
+}
+
+
+.red{
+    background-color: red;
+}
+
+.green{
+    background-color: green;
+}
+
+.purple{
+    background-color: purple;
+}
+
+.hide{
+    display: none;
+}
