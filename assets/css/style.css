@@ -12,6 +12,13 @@ h1{
     text-align: center;
 }
 
+h2{
+    left: 40%;
+    position: absolute;
+    font-size: 2rem;
+    padding-top: 7rem;
+}
+
 .center{
     text-align: center;
     margin-top: 2rem;
