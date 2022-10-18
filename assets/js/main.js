@@ -5,7 +5,8 @@ const containerPro = document.querySelector(".containerPro")
 let casella = document.createElement("div")
 //container.append(casella)
 
-
+counter = false
+let punteggio = 0
 
 const nabbo = document.querySelector(".nabbo")
 const intermedio = document.querySelector(".intermedio")
@@ -67,8 +68,10 @@ function generateBombs(min, max) {
 generateBombs(1, 100)
 console.log(bombs);
 
-counter = false
-let punteggio = 0
+// buleano tornare fals o true 
+// counter conta doppio
+
+/*
 
 function gridGeneratorNoob(min, max, ciao) {
     for (let index = min; index <= max; index++) {
@@ -99,6 +102,11 @@ function gridGeneratorNoob(min, max, ciao) {
     }
 }
 
+*/
+
+let score = []
+console.log(score);
+
 console.log(punteggio);
 /**
  * 
@@ -119,14 +127,15 @@ function gridGenerator(min, max, casellaDiffult, containerDifficult) {
             if (bombs.includes(index)) {
                 console.log("SI PUO' FARE!!!");
                 counter = true
-            } else {
-                punteggio++
-                console.log(punteggio, "punteggio giocatore");
+            } else if (!score.includes(index)) {
+                score.push(index)
+                console.log(score);
+                console.log("funziono!!");
                 casella.classList.toggle("red")
-                //console.log(index);
             }
             if (counter) {
-                punteggioElement.innerHTML = "il tuo punteggio è: " + punteggio
+                punteggioElement.innerHTML = "il tuo punteggio è: " + score.length
+                console.log(score);
                 punteggioElement.classList.remove("hide")
                 containerDifficult.innerHTML = ''
                 //alert("Ups, hai preso una bomba! il tuo punteggio è: " + punteggio)
@@ -134,7 +143,7 @@ function gridGenerator(min, max, casellaDiffult, containerDifficult) {
         })
     }
 }
-
+//console.log(score);
 for (let index = 1; index <= 49; index++) {
     //console.log(index);
     let casella = document.createElement("div")
