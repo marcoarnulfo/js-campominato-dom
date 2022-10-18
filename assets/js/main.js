@@ -19,6 +19,7 @@ nabbo.addEventListener("click", function () {
     containerNoob.classList.toggle("hide")
     containerInt.classList.add("hide")
     containerPro.classList.add("hide")
+    gridGenerator(1, 100, "casella", containerNoob)
     //gridGeneratorNoob(1, 100, "casella")
     punteggioElement.classList.add("hide")  
 })
@@ -112,7 +113,7 @@ function gridGenerator(min, max, casellaDiffult, containerDifficult) {
         //console.log(index);
         let casella = document.createElement("div")
         casella.append(index)
-        containerInt.append(casella)
+        containerDifficult.append(casella)
         casella.classList.add(casellaDiffult)
         casella.addEventListener("click", function () {
             if (bombs.includes(index)) {
