@@ -40,10 +40,9 @@ function generateRandomNumber(min, max) {
  * @returns  
  */
 
-
+ const bombs = [] // 0 
 
 function generateBombs(min, max) {
-    const bombs = [] // 0 
     while (bombs.length !== 16) { // fino a 16
         // genero un numero casuale
         const bomb = generateRandomNumber(min, max)
@@ -54,14 +53,15 @@ function generateBombs(min, max) {
             bombs.push(bomb)
         }
     }
-    return bombs
 }
 
 
 
 
-generateBombs(1, 16)
-console.log(generateBombs(1, 16));
+generateBombs(1, 100)
+console.log(generateBombs(1, 100));
+
+console.log(bombs);
 
 
 
@@ -78,6 +78,10 @@ for (let index = 1; index <= 100; index++) {
     // al click di una casella, aggiungo e tolgo una classe per cambiargli il colore
     // e stampo in console il contenuto di idex (il numero della casella)
     casella.addEventListener("click", function () {
+        if (index === bombs[0]) {
+            console.log("SI PUO' FARE!!!");
+            casella.classList.toggle("red")
+        }
         console.log(index);
         casella.classList.toggle("red")
     })
